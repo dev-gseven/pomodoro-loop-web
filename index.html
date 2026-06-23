@@ -1,17 +1,36 @@
 <!DOCTYPE html>
 <html lang="">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Pomodoro Loop</title>
-  </head>
-  <body style="text-align: center; background-color: #202020;">
-    <canvas id="canvas" oncontextmenu="event.preventDefault()" style="cursor: default;" width="350" height="350"></canvas>
-    <script type="text/javascript">
-      var Module = {
-        canvas: (function() { return document.getElementById('canvas'); })()
-      };
-    </script>
-    <script async type="text/javascript" src="PomodoroLoop.js"></script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title>Pomodoro Loop</title>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #202020;
+    }
+
+    canvas {
+      width: 100vw;
+      height: 100vh;
+      display: block;
+      resize: none !important;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="canvas" oncontextmenu="event.preventDefault()"></canvas>
+
+  <script>
+    var Module = {
+      canvas: document.getElementById('canvas'),
+      noResize: true
+    };
+  </script>
+
+  <script async src="PomodoroLoop.js"></script>
+</body>
 </html>
