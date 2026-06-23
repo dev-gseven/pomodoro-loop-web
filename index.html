@@ -8,11 +8,11 @@
   <body style="text-align: center; background-color: #202020;">
     <canvas id="canvas" oncontextmenu="event.preventDefault()" style="cursor: default;"></canvas>
     <script type="text/javascript">
-      var canvas = document.getElementById('canvas');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+      var myCanvas = document.getElementById('canvas');
+        myCanvas.width = window.innerWidth;
+        myCanvas.height = window.innerHeight;
       var Module = {
-        canvas: (function() { return document.getElementById('canvas'); })()
+        canvas: (function() { return myCanvas; })()
       };
     </script>
     <script async type="text/javascript" src="PomodoroLoop.js"></script>
