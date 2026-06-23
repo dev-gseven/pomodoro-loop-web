@@ -7,19 +7,12 @@
   </head>
   <body style="text-align: center; background-color: #202020;">
     <canvas id="canvas" oncontextmenu="event.preventDefault()" style="cursor: default;"></canvas>
-    <script>
+    <script type="text/javascript">
       var canvas = document.getElementById('canvas');
-
-      function resizeCanvas() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
-      }
-
-      resizeCanvas();
-      window.addEventListener('resize', resizeCanvas);
-
       var Module = {
-        canvas: canvas
+        canvas: (function() { return document.getElementById('canvas'); })()
       };
     </script>
     <script async type="text/javascript" src="PomodoroLoop.js"></script>
